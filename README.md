@@ -1,98 +1,191 @@
-# MindMap AI
+# MindMap AI - Intelligent Mind Mapping Platform
 
-![MindMap AI Logo](assets/logo.png)
+<div align="center">
+  <img src="./assets/images/logo.png" alt="MindMap AI Logo" width="800" style="border-radius: 50%;">
+  
+  [![Website](https://img.shields.io/badge/Website-MindMapAI.website-blue)](https://www.MindMapAI.website/)
+  [![Twitter](https://img.shields.io/badge/Twitter-MindMapAI__-blue)](https://x.com/MindMapAI_)
+  [![GitHub](https://img.shields.io/badge/GitHub-MindMapAIwebsite-blue)](https://github.com/MindMapAIwebsite/MindMapAI)
+</div>
 
-A powerful and intuitive mind mapping tool powered by AI.
+## 🔑 Overview
 
-## Features
+MindMap AI revolutionizes the way we create and manage mind maps by leveraging artificial intelligence. Our platform transforms complex ideas into clear, intuitive mind maps through intelligent content organization and real-time AI collaboration.
 
-- Interactive mind map creation and editing
-- Real-time collaboration
-- AI-powered topic suggestions
-- Customizable node styles and layouts
-- Export to various formats
-- Keyboard shortcuts for efficient navigation
+### Key Features
 
-## Tech Stack
+- **Intelligent Content Organization**: Transform text and documents into structured mind maps
+- **AI Copilot**: Real-time brainstorming and creative enhancement
+- **Interactive Editing**: Intuitive drag-and-drop interface
+- **Smart Layout**: Automatic node positioning and organization
+- **Real-time Collaboration**: Multi-user editing and cloud synchronization
+- **Export Options**: Multiple format support for sharing and presentation
 
-- **Frontend**: Next.js, React, TypeScript
+## 🏗️ System Architecture
+
+MindMap AI employs a modern, scalable architecture designed for performance and AI integration.
+
+### High-Level Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                        Client Applications                          │
+│                                                                     │
+│   ┌─────────────────┐   ┌─────────────────┐   ┌─────────────────┐   │
+│   │   Web App       │   │   Mobile App    │   │   Desktop App   │   │
+│   │   (React/TS)    │   │   (React Native)│   │   (Electron)    │   │
+│   └─────────────────┘   └─────────────────┘   └─────────────────┘   │
+└────────────────────────────────┬────────────────────────────────────┘
+                                 │
+                                 ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                           API Gateway                               │
+│                                                                     │
+│   ┌─────────────────┐   ┌─────────────────┐   ┌─────────────────┐   │
+│   │  Authentication │   │   API Routing   │   │   Rate Limiting │   │
+│   │  & Authorization│   │   & Validation  │   │   & Security    │   │
+│   └─────────────────┘   └─────────────────┘   └─────────────────┘   │
+└────────────────────────────────┬────────────────────────────────────┘
+                                 │
+                                 ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                        Backend Services                             │
+│                                                                     │
+│ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐    │
+│ │ Mind Map    │ │ AI Content  │ │ User        │ │ Collaboration│    │
+│ │ Service     │ │ Processing  │ │ Service     │ │ Service      │    │
+│ └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘    │
+│                                                                     │
+│ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐    │
+│ │ AI Copilot  │ │ Export      │ │ Analytics   │ │ Storage     │    │
+│ │ Service     │ │ Service     │ │ Service     │ │ Service     │    │
+│ └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘    │
+└────────────────────────────────┬────────────────────────────────────┘
+                                 │
+                                 ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                        AI Processing Layer                          │
+│                                                                     │
+│   ┌─────────────────┐   ┌─────────────────┐   ┌─────────────────┐   │
+│   │  NLP Engine     │   │  Content        │   │  Layout         │   │
+│   │  & LLM Models   │   │  Analysis       │   │  Optimization   │   │
+│   └─────────────────┘   └─────────────────┘   └─────────────────┘   │
+└────────────────────────────────┬────────────────────────────────────┘
+                                 │
+                                 ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                         Data Layer                                  │
+│                                                                     │
+│   ┌─────────────────┐   ┌─────────────────┐   ┌─────────────────┐   │
+│   │   PostgreSQL    │   │     Redis       │   │    S3 Storage   │   │
+│   │   Database      │   │     Cache       │   │    & CDN        │   │
+│   └─────────────────┘   └─────────────────┘   └─────────────────┘   │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+## 💻 Technical Stack
+
+### Frontend
+- **Framework**: React with TypeScript
 - **State Management**: React Hooks
-- **Visualization**: React Flow
-- **Styling**: Tailwind CSS
-- **AI Integration**: OpenAI API
+- **UI Components**: Custom components with Tailwind CSS
+- **Visualization**: React Flow for mind map rendering
+- **API Integration**: Axios, React Query
 
-## Project Structure
+### Backend
+- **Framework**: Next.js API Routes
+- **Authentication**: JWT with OAuth2
+- **Database**: PostgreSQL with Prisma
+- **Cache**: Redis
+- **Storage**: AWS S3
 
-```
-apps/web/
-├── src/
-│   ├── components/    # React components
-│   │   └── MindMap/  # Mind map related components
-│   ├── hooks/        # Custom React hooks
-│   ├── pages/        # Next.js pages
-│   ├── styles/       # Global styles
-│   ├── types/        # TypeScript type definitions
-│   └── utils/        # Utility functions
-├── public/           # Static assets
-└── tests/           # Test files
-```
+### AI Infrastructure
+- **NLP**: OpenAI GPT-4
+- **Layout Engine**: Custom algorithms
+- **Content Analysis**: Machine Learning models
 
-## Architecture
+## 🚀 Getting Started
 
-### Data Flow
-```
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│   User      │    │  React      │    │  Mind Map   │
-│ Interaction │───>│   State     │───>│   Render    │
-└─────────────┘    └─────────────┘    └─────────────┘
-       │                  ▲                  │
-       │                  │                  │
-       └──────────────────┴──────────────────┘
-```
+### Prerequisites
+- Node.js (v16+)
+- npm or yarn
+- PostgreSQL (v14+)
+- Redis
 
-### Component Architecture
-```
-┌─────────────────┐
-│    MindMap      │
-└────────┬────────┘
-         │
-    ┌────┴────┐
-    │         │
-┌───▼───┐ ┌───▼───┐
-│ Nodes │ │ Edges │
-└───────┘ └───────┘
-```
+### Installation
 
-## Getting Started
-
-1. Clone the repository:
 ```bash
+# Clone the repository
 git clone https://github.com/MindMapAIwebsite/MindMapAI.git
-```
+cd MindMapAI
 
-2. Install dependencies:
-```bash
-cd MindMapAI/apps/web
+# Install dependencies
+cd apps/web
 npm install
-```
 
-3. Start the development server:
-```bash
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your configuration
+
+# Start development server
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+## 📊 Core Features
 
-## Contributing
+### Content Processing
+- Text to Mind Map conversion
+- Document analysis
+- Hierarchical structure detection
+- Smart content organization
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+### AI Copilot
+- Real-time suggestions
+- Knowledge gap detection
+- Creative expansion
+- Context-aware recommendations
 
-## Links
+### Collaboration
+- Real-time multi-user editing
+- Version control
+- Share and export options
+- Team workspaces
 
-- Website: [https://www.MindMapAI.website/](https://www.MindMapAI.website/)
-- Twitter: [https://x.com/MindMapAI_](https://x.com/MindMapAI_)
-- GitHub: [https://github.com/MindMapAIwebsite/MindMapAI](https://github.com/MindMapAIwebsite/MindMapAI)
+## 🔒 Security
 
-## License
+- End-to-end encryption for sensitive data
+- OAuth2 authentication
+- Rate limiting
+- GDPR compliance
+- Regular security audits
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+## 📖 Documentation
+
+- [User Guide](docs/user_guide.md)
+- [API Reference](docs/api_reference.md)
+- [Development Guide](docs/development.md)
+- [AI Features](docs/ai_features.md)
+
+## 🤝 Contributing
+
+We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+### Development Workflow
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+- Website: [mindmapai.website](https://www.mindmapai.website)
+- Twitter: [@MindMapAI_](https://x.com/MindMapAI_)
+- GitHub: [MindMapAIwebsite](https://github.com/MindMapAIwebsite/MindMapAI)
+
+Built with ❤️ by the MindMap AI Team 
